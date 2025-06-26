@@ -2,16 +2,21 @@ const mongoose=require("mongoose");
 
 const chatSchema=({
     from:{
-        type:String
+        type:String,
+        required:true,
     },
     to:{
-        type:String
+        type:String,
+        required:true,
     },
     msg:{
-        type:String
+        type:String,
+        maxlength:30,
     },
     created_at:{
-        type:Date
+        type:Date,
+        required:true,
+        
     }
 });
 const Chat=mongoose.model("Chat",chatSchema);
